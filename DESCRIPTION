@@ -1,12 +1,18 @@
 Package: colouR
 Type: Package
-Title: What the Package Does (Title Case)
+Title: Create colour palettes from images
 Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
-License: What license is it under?
+Author: Alan Inglis
+Maintainer: <alan.n.inglis@gmail.com>
+Description: Can take in images in either .jpg, .jpeg, or .png format and creates a colour palette of the most frequent colours used in the image.
+License:  GPL (>=2)
 Encoding: UTF-8
+Imports: 
+    ggplot2,
+    dplyr,
+    jpeg,
+    png, 
+    grDevices,
+    httr
 LazyData: true
-RoxygenNote: 7.1.1
+RoxygenNote: 7.2.1
