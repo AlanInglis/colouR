@@ -1,0 +1,85 @@
+---
+title: "colouR"
+author: "Alan Inglis"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{colouR}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+
+# Introduction to the colouR Package
+
+Welcome to the `colouR` package, a useful tool for analyzing and utilizing the colors in images, as well as providing color palettes inspired by Radiohead and Taylor Swift album covers. Whether you are a designer looking for inspiration, a data analyst searching for unique ways to visualize data, or a music lover wanting to incorporate your favorite album colors into your projects, this package is for you.
+
+# Package Overview
+
+The `colouR` package provides a set of functions that allows you to:
+
+* Extract color values from an image (either JPG or PNG).
+* Obtain the top n colors in the image based on their frequency.
+* Exclude black and white shades, if desired.
+* Group and average colors in the image.
+* Utilize color palettes inspired by Radiohead and Taylor Swift album covers.
+* These functionalities make the `colouR` package a versatile and easy-to-use tool for exploring and working with colors in images.
+
+# Key Functions
+
+Some of the main functions included in the `colouR` package are:
+
+* `getTopCol()`: Extracts the top n colors from an image, with options to exclude black and white shades, and to group and average colors.
+
+* `colPalette()`: Creates a color palette based on a specified album cover from either Radiohead or Taylor Swift discography.
+
+* `scaleColor()`: Provides a ggplot2-compatible color scale based on the selected album cover palette, for both discrete and continuous data.
+
+* `scaleFill()`: Provides a ggplot2-compatible fill scale based on the selected album cover palette, for both discrete and continuous data.
+
+# Getting Started
+
+To begin using the `colouR` package, simply install it from CRAN or GitHub, load it into your R session, and start exploring the world of colors in images and your favorite music album covers.
+
+```{r}
+# Install the package (if not already installed)
+#install.packages("colorXtractor")
+
+# Load the package
+library(colouR)
+
+# Extract top colors from an image
+getTopCol("/Users/alaninglis/Desktop/taylor/tyty.png", n = 5)
+```
+
+
+TEST 2
+
+```{r}
+# Create a color palette based on a Taylor Swift album cover
+tswift_palette <- colPalette(palette = "evermore")
+tswift_palette(12)
+```
+
+
+TEST 3
+
+```{r}
+library(ggplot2)
+# Apply a Radiohead color scale to a ggplot2 plot
+ggplot(mpg, aes(manufacturer, fill = manufacturer)) +
+  geom_bar() +
+  theme_minimal()+
+  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
+  scaleFill(palette = "KID_A", guide = "none")
+```
+
+
+THE END
