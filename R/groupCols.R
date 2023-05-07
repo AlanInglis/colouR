@@ -33,6 +33,9 @@ groupCols <- function(hex_colors, n_clusters = 5){
   # Assign the cluster labels to the original hex colors
   grouped_colors <- data.frame(hex_color = hex_colors, group = clust_result$cluster)
 
+  # Sort colours by group
+  grouped_colors <- grouped_colors[order(grouped_colors$group, decreasing = TRUE), ]
+
   return(grouped_colors)
 }
 
