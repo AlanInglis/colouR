@@ -7,12 +7,14 @@ Maintainer: <alan.n.inglis@gmail.com>
 Description: Can take in images in either .jpg, .jpeg, or .png format and creates a colour palette of the most frequent colours used in the image.
 License:  GPL (>=2)
 Encoding: UTF-8
+VignetteBuilder: knitr
 Imports: 
     ggplot2,
     dplyr,
     jpeg,
     png, 
     grDevices,
-    httr
+    httr,
+    stats
 LazyData: true
 RoxygenNote: 7.2.1
