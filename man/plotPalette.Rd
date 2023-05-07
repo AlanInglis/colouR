@@ -7,7 +7,7 @@
 plotPalette(df, color_col)
 }
 \arguments{
-\item{df}{A data frame containing a column with colors in hexadecimal format.}
+\item{df}{A vector of colours or a data frame containing a column with colors in hexadecimal format.}
 
 \item{color_col}{A character string representing the name of the column containing the colors.}
 }
@@ -16,8 +16,8 @@ A ggplot2 plot object displaying the color palette.
 }
 \description{
 Plot a color palette from a data frame.
-This function takes a data frame with a column of colors and plots the colors as a color palette.
-The height of the color bars can be adjusted using the `bar_height` parameter.
+This function takes a vector of colours or a
+data frame with a column of colors and plots the colors as a color palette.
 }
 \examples{
 # Create a sample data frame with colors

@@ -4,13 +4,14 @@
 \alias{read_image_from_url}
 \title{read_image_from_url}
 \usage{
-read_image_from_url(url)
+read_image_from_url(path)
 }
 \arguments{
-\item{url}{A character string representing the URL of the image file.}
+\item{path}{A character string representing the URL of the image file.}
 }
 \value{
-An object containing the image data. If the image is a JPG, the object will be of class "array". If the image is a PNG, the object will be of class "matrix".
+An object containing the image data. If the image is a JPG, the object will be of class "array".
+If the image is a PNG, the object will be of class "matrix".
 }
 \description{
 Read either a PNG or JPG file from a URL. This function reads an

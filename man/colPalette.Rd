@@ -20,10 +20,6 @@ Create a Color Palette. This function generates a custom
 color palette based on the specified 'palette' name.
 The color palettes are sourced from two
 predefined lists: 'taylor_palettes' and 'radiohead_palettes'.
-If the 'reverse' parameter is set to TRUE, the order of the
-colors in the palette will be reversed.
-Additional arguments passed to the function are forwarded to
-the 'colorRampPalette' function.
 }
 \examples{
 my_palette <- colPalette(palette = "evermore")
