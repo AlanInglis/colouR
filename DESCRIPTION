@@ -14,11 +14,13 @@ Imports:
     png, 
     grDevices,
     httr,
-    stats
+    stats,
+    pixmap
 LazyData: true
 RoxygenNote: 7.2.1
 Suggests:
     knitr,
-    rmarkdown
+    rmarkdown,
+    scales
 VignetteBuilder: knitr
 
