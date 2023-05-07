@@ -7,7 +7,9 @@
 <!-- badges: end -->
 
 `colouR` is a useful tool for analyzing and utilizing the colors in
-images, as well as providing color palettes.
+images, as well as providing color palettes. A demonstration of the
+package can be found here:
+<https://alaninglis.github.io/colouR/articles/colouR.html>
 
 ## Installation
 
