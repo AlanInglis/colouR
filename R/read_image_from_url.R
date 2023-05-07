@@ -3,9 +3,10 @@
 #' Read either a PNG or JPG file from a URL. This function reads an
 #' image file (PNG or JPG) from a URL and returns the image data.
 #'
-#' @param url A character string representing the URL of the image file.
+#' @param path A character string representing the URL of the image file.
 #'
-#' @return An object containing the image data. If the image is a JPG, the object will be of class "array". If the image is a PNG, the object will be of class "matrix".
+#' @return An object containing the image data. If the image is a JPG, the object will be of class "array".
+#' If the image is a PNG, the object will be of class "matrix".
 #'
 #' @importFrom httr GET
 #' @importFrom httr write_disk
@@ -17,7 +18,7 @@
 #' image <- read_image_from_url(url)
 #' @export
 
-read_image_from_url <- function(url) {
+read_image_from_url <- function(path) {
   # Get the file extension
   file_ext <- getExtension(file = path)
 
