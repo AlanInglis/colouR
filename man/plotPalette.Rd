@@ -26,6 +26,6 @@ colors_df <- data.frame(
 )
 
 # Plot the color palette with default bar height
-plot_color_palette(colors_df, "color")
+plotPalette(colors_df, "color")
 
 }

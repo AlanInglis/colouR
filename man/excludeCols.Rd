@@ -6,6 +6,9 @@
 \usage{
 excludeCols(data)
 }
+\arguments{
+\item{data}{Data frame of colours}
+}
 \description{
 A non-exhaustive list of white and black colour shades. For use when setting \code{exclude = TRUE}
 in the \code{getTopCol} function. Setting  \code{exclude = TRUE} when calling the \code{getTopCol}

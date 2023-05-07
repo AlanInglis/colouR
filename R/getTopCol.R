@@ -118,10 +118,10 @@ getTopCol <- function(path,
 #' @description  A non-exhaustive list of white and black colour shades. For use when setting \code{exclude = TRUE}
 #' in the \code{getTopCol} function. Setting  \code{exclude = TRUE} when calling the \code{getTopCol}
 #' function will exclude the colours form the results.
+#' @param data Data frame of colours
 #' @export
 excludeCols <- function(data){
 
-  data <- data
   # Vector of black shades
   blacks <- c(
     "#010101",

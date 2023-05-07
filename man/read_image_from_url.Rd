@@ -17,7 +17,3 @@ If the image is a PNG, the object will be of class "matrix".
 Read either a PNG or JPG file from a URL. This function reads an
 image file (PNG or JPG) from a URL and returns the image data.
 }
-\examples{
-url <- "https://example.com/image.jpg"
-image <- read_image_from_url(url)
-}

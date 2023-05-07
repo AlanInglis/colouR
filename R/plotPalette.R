@@ -19,7 +19,7 @@
 #' )
 #'
 #' # Plot the color palette with default bar height
-#' plot_color_palette(colors_df, "color")
+#' plotPalette(colors_df, "color")
 #'
 #' @export
 
@@ -29,7 +29,9 @@ plotPalette <- function(df, color_col) {
   # Declare golbal vars
   index <- NULL
 
-  if(class(df) == 'character'){
+  cc <- class(df)
+
+  if(cc == 'character'){
     df <- data.frame(cols = df)
     color_col <- 'cols'
   }

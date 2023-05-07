@@ -13,9 +13,6 @@
 #' @importFrom jpeg readJPEG
 #' @importFrom png readPNG
 #'
-#' @examples
-#' url <- "https://example.com/image.jpg"
-#' image <- read_image_from_url(url)
 #' @export
 
 read_image_from_url <- function(path) {
