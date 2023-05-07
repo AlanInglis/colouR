@@ -9,8 +9,6 @@ colPalette(palette)
 \arguments{
 \item{palette}{A character string specifying the name of the colour palette.
 The palette must be present in either 'taylor_palettes' or 'radiohead_palettes'.}
-
-\item{n}{The number of colours in the palette to return.}
 }
 \value{
 A colorRampPalette function with the specified colour palette.

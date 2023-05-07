@@ -26,6 +26,9 @@
 
 plotPalette <- function(df, color_col) {
 
+  # Declare golbal vars
+  index <- NULL
+
   if(class(df) == 'character'){
     df <- data.frame(cols = df)
     color_col <- 'cols'

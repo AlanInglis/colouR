@@ -14,6 +14,7 @@
 #'
 #' @importFrom grDevices col2rgb
 #' @importFrom grDevices rgb
+#' @importFrom stats aggregate
 #'
 #' @examples
 #' df <- data.frame(

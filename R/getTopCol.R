@@ -12,11 +12,13 @@
 #' @param n_clusters Integer, the number of clusters to use for grouping colors. Default is 5.
 #'
 #' @return A data frame with the top colors, their frequency, and percentage in the image.
-#' @export
 #'
-#' @examples
-#' getTopCol("path/to/image.jpg", n = 5, exclude = TRUE, avgCols = TRUE, n_clusters = 4)
-
+#' @importFrom pixmap pixmapRGB
+#' @importFrom jpeg readJPEG
+#' @importFrom png readPNG
+#' @importFrom grDevices rgb
+#'
+#' @export
 
 getTopCol <- function(path,
                       n = NULL,
@@ -119,6 +121,7 @@ getTopCol <- function(path,
 #' @export
 excludeCols <- function(data){
 
+  data <- data
   # Vector of black shades
   blacks <- c(
     "#010101",

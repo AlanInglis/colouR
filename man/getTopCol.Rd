@@ -34,6 +34,3 @@ Get top colors from an image. This function reads an image file, extracts the co
 and returns the top n colors based on their frequency in the image.
 Optionally, black and white shades can be excluded, and the colors can be grouped and averaged.
 }
-\examples{
-getTopCol("path/to/image.jpg", n = 5, exclude = TRUE, avgCols = TRUE, n_clusters = 4)
-}
