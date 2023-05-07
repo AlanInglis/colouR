@@ -1,10 +1,10 @@
 #' plotPalette
 #'
 #' Plot a color palette from a data frame.
-#' This function takes a data frame with a column of colors and plots the colors as a color palette.
-#' The height of the color bars can be adjusted using the `bar_height` parameter.
+#' This function takes a vector of colours or a
+#' data frame with a column of colors and plots the colors as a color palette.
 #'
-#' @param df A data frame containing a column with colors in hexadecimal format.
+#' @param df A vector of colours or a data frame containing a column with colors in hexadecimal format.
 #' @param color_col A character string representing the name of the column containing the colors.
 #'
 #' @return A ggplot2 plot object displaying the color palette.
@@ -26,6 +26,11 @@
 
 plotPalette <- function(df, color_col) {
 
+  if(class(df) == 'character'){
+    df <- data.frame(cols = df)
+    color_col <- 'cols'
+  }
+
   # Ensure that the provided color_col exists in the data frame
   if (color_col %in% colnames(df)) {
 
@@ -39,7 +44,7 @@ plotPalette <- function(df, color_col) {
     # Plot the color palette using ggplot2
     ggplot(df, aes(x = index, y = 1, fill = col)) +
       geom_tile(height = 0.5) +
-      scale_fill_manual(values=df$col) +
+      scale_fill_manual(values=as.character(df$col)) +
       scale_x_continuous(expand = c(0, 0)) +
       scale_y_continuous(expand = c(0, 0)) +
       coord_cartesian(ylim = c(0, 1/0.5)) +
