@@ -87,6 +87,8 @@ getTopCol <- function(path,
 
     # Remove group column
     df_col$group <- NULL
+
+    df_col <- df_col[order(df_col$freq, decreasing = TRUE), ]
   }
 
 
