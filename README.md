@@ -4,6 +4,8 @@
 # colouR
 
 <!-- badges: start -->
+
+<img src="https://raw.githubusercontent.com/AlanInglis/colouR/master/images/colour.png" width="240" height="276" align="right" />
 <!-- badges: end -->
 
 `colouR` is a useful tool for analyzing and utilizing the colors in
