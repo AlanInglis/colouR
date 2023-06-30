@@ -28,7 +28,7 @@ knitr::opts_chunk$set(
 
 # Introduction to the colouR Package
 
-Welcome to the `colouR` package, a useful tool for analyzing and utilizing the colors in images, as well as providing color palettes inspired by Radiohead and Taylor Swift album covers. Whether you are a designer looking for inspiration, a data analyst searching for unique ways to visualize data, or a music lover wanting to incorporate your favorite album colors into your projects, this package is for you.
+Welcome to the `colouR` package, a useful tool for analyzing and utilizing the colors in images, as well as providing color palettes inspired by Radiohead and Taylor Swift album covers. Whether you are a designer looking for inspiration, a data analyst searching for unique ways to visualize data, or a music lover wanting to incorporate your favorite album colors into your projects, this package is for you. It is recommended to view this instructional guide via the GitHub page: https://alaninglis.github.io/colouR/articles/colouR.html
 
 # Package Overview
 
