@@ -21,7 +21,12 @@
 #'
 #' @export
 
-img2pal <- function(path, n, avgCols, exclude, n_clusters, customExclude = NULL) {
+img2pal <- function(path,
+                    n = NULL,
+                    avgCols = FALSE,
+                    exclude = FALSE,
+                    n_clusters = NULL,
+                    customExclude = NULL) {
 
   # Get colours from image
   suppressWarnings(
