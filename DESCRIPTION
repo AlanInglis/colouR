@@ -1,9 +1,9 @@
 Package: colouR
 Type: Package
-Title: Create colour palettes from images
+Title: Create Colour Palettes from Images
 Version: 0.1.0
 Author: Alan Inglis
-Maintainer: <alan.n.inglis@gmail.com>
+Maintainer: Alan Inglis <alan.n.inglis@gmail.com>
 Description: Can take in images in either .jpg, .jpeg, or .png format and creates a colour palette of the most frequent colours used in the image. Also provides some custom colour palettes.
 License: GPL (>=2)
 Encoding: UTF-8

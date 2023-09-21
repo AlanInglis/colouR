@@ -19,8 +19,6 @@
 <![endif]-->
 </head>
 <body data-spy="scroll" data-target="#toc">
-    
-
     <div class="container template-article">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -33,12 +31,18 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">colouR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.1.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.0</span>
       </span>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
+<li>
+  <a href="../index.html">
+    <span class="fas fa-home fa-lg"></span>
+     
+  </a>
+</li>
 <li>
   <a href="../articles/colouR.html">Get started</a>
 </li>
@@ -56,7 +60,7 @@
 
       
 
-      </header><div class="row">
+      </header><script src="colouR_files/header-attrs-2.24/header-attrs.js"></script><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>colouR</h1>
@@ -76,20 +80,20 @@
   }
 </style>
 <!-- badges: start --><p><img src="https://raw.githubusercontent.com/AlanInglis/colouR/master/images/colour.png" width="240" height="276" align="right"><!-- badges: end --></p>
-<div class="section level2">
-<h2 id="introduction-to-the-colour-package">Introduction to the colouR Package<a class="anchor" aria-label="anchor" href="#introduction-to-the-colour-package"></a>
-</h2>
+<div id="introduction-to-the-colour-package" class="section level1">
+<h1 class="hasAnchor">
+<a href="#introduction-to-the-colour-package" class="anchor"></a>Introduction to the colouR Package</h1>
 <p>Welcome to the <code>colouR</code> package, a useful tool for
 analyzing and utilizing the colors in images, as well as providing color
 palettes inspired by Radiohead and Taylor Swift album covers. Whether
 you are a designer looking for inspiration, a data analyst searching for
 unique ways to visualize data, or a music lover wanting to incorporate
-your favorite album colors into your projects, this package is for
-you.</p>
-</div>
-<div class="section level2">
-<h2 id="package-overview">Package Overview<a class="anchor" aria-label="anchor" href="#package-overview"></a>
-</h2>
+your favorite album colors into your projects, this package is for you.
+It is recommended to view this instructional guide via the GitHub page:
+<a href="https://alaninglis.github.io/colouR/articles/colouR.html" class="uri">https://alaninglis.github.io/colouR/articles/colouR.html</a></p>
+<div id="package-overview" class="section level2">
+<h2 class="hasAnchor">
+<a href="#package-overview" class="anchor"></a>Package Overview</h2>
 <p>The <code>colouR</code> package provides a set of functions that
 allows you to:</p>
 <ul>
@@ -104,9 +108,9 @@ versatile and easy-to-use tool for exploring and working with colors in
 images.</li>
 </ul>
 </div>
-<div class="section level2">
-<h2 id="key-functions">Key Functions<a class="anchor" aria-label="anchor" href="#key-functions"></a>
-</h2>
+<div id="key-functions" class="section level2">
+<h2 class="hasAnchor">
+<a href="#key-functions" class="anchor"></a>Key Functions</h2>
 <p>Some of the main functions included in the <code>colouR</code>
 package are:</p>
 <ul>
@@ -130,15 +134,17 @@ columns: one for the hex color values and another for the group labels.
 It calculates the average color for each group and returns a data frame
 with the group labels and their corresponding average hex
 colors.</p></li>
+<li><p><code>img2pal</code>: Creates a Colour Palette from an input
+image.</p></li>
 <li><p><code>plotPalette</code>: This function takes a data frame with a
 column of colors and plots the colors as a color palette.</p></li>
 </ul>
 <p>In addition, we provide several utility functions, all of which are
 demonstrated in this document.</p>
 </div>
-<div class="section level2">
-<h2 id="getting-started">Getting Started<a class="anchor" aria-label="anchor" href="#getting-started"></a>
-</h2>
+<div id="getting-started" class="section level2">
+<h2 class="hasAnchor">
+<a href="#getting-started" class="anchor"></a>Getting Started</h2>
 <p>To begin using the <code>colouR</code> package, simply install it
 from GitHub, load it into your R session, and start exploring the world
 of colors in images.</p>
@@ -147,15 +153,15 @@ of colors in images.</p>
 <span><span class="co">#devtools::install_github("AlanInglis/colouR")</span></span>
 <span></span>
 <span><span class="co"># Load the package</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va">colouR</span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">colouR</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Load ggplot2 for making some plots</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org" class="external-link">ggplot2</a></span><span class="op">)</span></span></code></pre></div>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span></span></code></pre></div>
 </div>
-<div class="section level2">
-<h2 id="get-the-top-n-colours-in-an-image">Get the top <span class="math inline">\(n\)</span> colours in an
-image<a class="anchor" aria-label="anchor" href="#get-the-top-n-colours-in-an-image"></a>
-</h2>
+</div>
+<div id="get-the-top-n-colours-in-an-image" class="section level1">
+<h1 class="hasAnchor">
+<a href="#get-the-top-n-colours-in-an-image" class="anchor"></a>Get the top n colours in an image</h1>
 <p>The first function we demonstrate is the <code>getTopCol</code>
 function. This function reads an image file, extracts the colors, and
 returns the top n colors based on their frequency in the image.
@@ -164,6 +170,9 @@ be grouped and averaged (more on colour averaging later!). This function
 can take in a .jpg, .jpeg, or .png or a url pointing to an image using
 any of these formats, via the <code>path</code> argument and returns the
 top <code>n</code> colours used in the image.</p>
+<div id="function-arguments" class="section level2">
+<h2 class="hasAnchor">
+<a href="#function-arguments" class="anchor"></a>Function Arguments</h2>
 <p>The arguments for this function are:</p>
 <ul>
 <li>
@@ -184,16 +193,27 @@ groups. Default is TRUE.</li>
 <li>
 <code>n_clusters</code> Integer, the number of clusters to use for
 grouping colors. Default is 5.</li>
+<li>
+<code>customExclude</code> Character vector. Optional vector of
+custom color codes in HEX format to be excluded.</li>
 </ul>
+</div>
+<div id="input-image" class="section level2">
+<h2 class="hasAnchor">
+<a href="#input-image" class="anchor"></a>Input Image</h2>
 <p>To begin, lets first take a look at a raw image:</p>
 <center>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu">knitr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/include_graphics.html" class="external-link">include_graphics</a></span><span class="op">(</span><span class="st">"https://raw.githubusercontent.com/AlanInglis/colouR/master/images/bender.png"</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu">knitr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/include_graphics.html">include_graphics</a></span><span class="op">(</span><span class="st">"https://raw.githubusercontent.com/AlanInglis/colouR/master/images/bender.png"</span><span class="op">)</span></span></code></pre></div>
 <img src="https://raw.githubusercontent.com/AlanInglis/colouR/master/images/bender.png" width="30%" height="30%" style="display: block; margin: auto;"><caption>
 <span id="fig1:fig1">Figure 1: </span>The <em>“towering inferno of
 physical perfection”</em> that is Bender.
 </caption>
 </center>
+</div>
+<div id="top-10-colours-in-image" class="section level2">
+<h2 class="hasAnchor">
+<a href="#top-10-colours-in-image" class="anchor"></a>Top 10 colours in image</h2>
 <p>In the code below we obtain the top 10 most frequent colours used in
 the image without using any colour grouping or averaging by setting
 <code>avgCols = FALSE</code>. Additionally, we chose not to exclude any
@@ -207,7 +227,7 @@ exclude function… more on that below). The output of the
 frame with three columns, that is, the top colors, their frequency, and
 percentage in the image.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Random.html" class="external-link">set.seed</a></span><span class="op">(</span><span class="fl">1701</span><span class="op">)</span> <span class="co"># for reproducability</span></span>
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">1701</span><span class="op">)</span> <span class="co"># for reproducability</span></span>
 <span></span>
 <span><span class="va">top10</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/getTopCol.html">getTopCol</a></span><span class="op">(</span>path <span class="op">=</span> <span class="st">"https://raw.githubusercontent.com/AlanInglis/colouR/master/images/bender.png"</span>,</span>
 <span>                   n <span class="op">=</span> <span class="fl">10</span>,</span>
@@ -227,56 +247,69 @@ percentage in the image.</p>
 <span><span class="co">#&gt; 8  #A9C5DB    8923      0.2433</span></span>
 <span><span class="co">#&gt; 9  #AAC5DA    7807      0.2129</span></span>
 <span><span class="co">#&gt; 10 #7BA4C0    6042      0.1648</span></span></code></pre></div>
+</div>
+<div id="plot-top-10-colours" class="section level2">
+<h2 class="hasAnchor">
+<a href="#plot-top-10-colours" class="anchor"></a>Plot top 10 colours</h2>
 <p>Plotting the top 10 colours, we can see that the colour white
 dominates the image with over 51% of the image being white. Since most
 of this white is probably from the background of the image, this result
 is not very useful.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># order factors</span></span>
-<span><span class="va">top10</span><span class="op">$</span><span class="va">hex</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html" class="external-link">factor</a></span><span class="op">(</span><span class="va">top10</span><span class="op">$</span><span class="va">hex</span>, levels <span class="op">=</span> <span class="va">top10</span><span class="op">$</span><span class="va">hex</span><span class="op">)</span></span>
+<span><span class="va">top10</span><span class="op">$</span><span class="va">hex</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span><span class="op">(</span><span class="va">top10</span><span class="op">$</span><span class="va">hex</span>, levels <span class="op">=</span> <span class="va">top10</span><span class="op">$</span><span class="va">hex</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># plot</span></span>
-<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="va">top10</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">hex</span>, y <span class="op">=</span> <span class="va">freq</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html" class="external-link">geom_bar</a></span><span class="op">(</span>stat <span class="op">=</span> <span class="st">'identity'</span>, fill <span class="op">=</span> <span class="va">top10</span><span class="op">$</span><span class="va">hex</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html" class="external-link">theme_dark</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html" class="external-link">theme</a></span><span class="op">(</span>axis.text.x <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html" class="external-link">element_text</a></span><span class="op">(</span>angle <span class="op">=</span> <span class="fl">45</span>, hjust <span class="op">=</span> <span class="fl">1</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">xlab</a></span><span class="op">(</span><span class="st">'HEX colour code'</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">ylab</a></span><span class="op">(</span><span class="st">'Frequency'</span><span class="op">)</span></span></code></pre></div>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">top10</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">hex</span>, y <span class="op">=</span> <span class="va">freq</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar</a></span><span class="op">(</span>stat <span class="op">=</span> <span class="st">'identity'</span>, fill <span class="op">=</span> <span class="va">top10</span><span class="op">$</span><span class="va">hex</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_dark</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span><span class="op">(</span>axis.text.x <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_text</a></span><span class="op">(</span>angle <span class="op">=</span> <span class="fl">45</span>, hjust <span class="op">=</span> <span class="fl">1</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">xlab</a></span><span class="op">(</span><span class="st">'HEX colour code'</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ylab</a></span><span class="op">(</span><span class="st">'Frequency'</span><span class="op">)</span></span></code></pre></div>
 <img src="colouR_files/figure-html/top10colsPlot-1.png" width="70%" height="70%" style="display: block; margin: auto;"><center>
 <caption>
 <span id="fig2:fig2">Figure 2: </span>Frequency of colours used in the
 image. We can see that white dominates the image.
 </caption>
 </center>
+</div>
+<div id="exclude-unwanted-colours" class="section level2">
+<h2 class="hasAnchor">
+<a href="#exclude-unwanted-colours" class="anchor"></a>Exclude unwanted colours</h2>
 <p>Since most of this white is probably from the background of the
-image, this result is not very useful. TO exclude white and black shades
-we set <code>exclude = TRUE</code></p>
+image, this result is not very useful. To exclude white and black shades
+we set <code>exclude = TRUE</code> (more on this below).</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Random.html" class="external-link">set.seed</a></span><span class="op">(</span><span class="fl">1701</span><span class="op">)</span> <span class="co"># for reproducability</span></span>
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">1701</span><span class="op">)</span> <span class="co"># for reproducability</span></span>
 <span></span>
 <span><span class="va">top10exclude</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/getTopCol.html">getTopCol</a></span><span class="op">(</span>path <span class="op">=</span> <span class="st">"https://raw.githubusercontent.com/AlanInglis/colouR/master/images/bender.png"</span>,</span>
 <span>                          n <span class="op">=</span> <span class="fl">10</span>,</span>
 <span>                          avgCols <span class="op">=</span> <span class="cn">FALSE</span>,</span>
-<span>                          exclude <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
+<span>                          exclude <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>                          customExclude <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span></span></code></pre></div>
 <p>Now, plotting these colours gives a more truer representation of the
 colours used in the image:</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># order factors</span></span>
-<span><span class="va">top10exclude</span><span class="op">$</span><span class="va">hex</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html" class="external-link">factor</a></span><span class="op">(</span><span class="va">top10exclude</span><span class="op">$</span><span class="va">hex</span>, levels <span class="op">=</span> <span class="va">top10exclude</span><span class="op">$</span><span class="va">hex</span><span class="op">)</span></span>
+<span><span class="va">top10exclude</span><span class="op">$</span><span class="va">hex</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span><span class="op">(</span><span class="va">top10exclude</span><span class="op">$</span><span class="va">hex</span>, levels <span class="op">=</span> <span class="va">top10exclude</span><span class="op">$</span><span class="va">hex</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># plot</span></span>
-<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="va">top10exclude</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">hex</span>, y <span class="op">=</span> <span class="va">freq</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html" class="external-link">geom_bar</a></span><span class="op">(</span>stat <span class="op">=</span> <span class="st">'identity'</span>, fill <span class="op">=</span> <span class="va">top10exclude</span><span class="op">$</span><span class="va">hex</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html" class="external-link">theme_bw</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html" class="external-link">theme</a></span><span class="op">(</span>axis.text.x <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html" class="external-link">element_text</a></span><span class="op">(</span>angle <span class="op">=</span> <span class="fl">45</span>, hjust <span class="op">=</span> <span class="fl">1</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">xlab</a></span><span class="op">(</span><span class="st">'HEX colour code'</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">ylab</a></span><span class="op">(</span><span class="st">'Frequency'</span><span class="op">)</span></span></code></pre></div>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">top10exclude</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">hex</span>, y <span class="op">=</span> <span class="va">freq</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar</a></span><span class="op">(</span>stat <span class="op">=</span> <span class="st">'identity'</span>, fill <span class="op">=</span> <span class="va">top10exclude</span><span class="op">$</span><span class="va">hex</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span><span class="op">(</span>axis.text.x <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_text</a></span><span class="op">(</span>angle <span class="op">=</span> <span class="fl">45</span>, hjust <span class="op">=</span> <span class="fl">1</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">xlab</a></span><span class="op">(</span><span class="st">'HEX colour code'</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ylab</a></span><span class="op">(</span><span class="st">'Frequency'</span><span class="op">)</span></span></code></pre></div>
 <img src="colouR_files/figure-html/top10colsPlotExclude-1.png" width="70%" height="70%" style="display: block; margin: auto;"><center>
 <caption>
 <span id="fig3:fig3">Figure 3: </span>Frequency of colours used in the
 image with white and black colours excluded.
 </caption>
 </center>
+</div>
+<div id="average-top-colours" class="section level2">
+<h2 class="hasAnchor">
+<a href="#average-top-colours" class="anchor"></a>Average top colours</h2>
 <p>In Figure 3, we can see that there are a lot of similar colours. That
 is, many of the colours are different shades of a metallic blue. By
 setting <code>avgCols = TRUE</code>, we can group together colours with
@@ -285,7 +318,7 @@ the <code>n_clusters</code> argument and average over them to produce a
 single colour. In this case, we are setting <code>n_clusters = 5</code>
 (this eliminates the need to set the <code>n</code> argument).</p>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Random.html" class="external-link">set.seed</a></span><span class="op">(</span><span class="fl">1701</span><span class="op">)</span> <span class="co"># for reproducability</span></span>
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">1701</span><span class="op">)</span> <span class="co"># for reproducability</span></span>
 <span></span>
 <span><span class="va">top10avg</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/getTopCol.html">getTopCol</a></span><span class="op">(</span>path <span class="op">=</span> <span class="st">"https://raw.githubusercontent.com/AlanInglis/colouR/master/images/bender.png"</span>,</span>
 <span>                      avgCols <span class="op">=</span> <span class="cn">TRUE</span>,</span>
@@ -293,29 +326,75 @@ single colour. In this case, we are setting <code>n_clusters = 5</code>
 <span>                      n_clusters <span class="op">=</span> <span class="fl">5</span><span class="op">)</span></span></code></pre></div>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># order factors</span></span>
-<span><span class="va">top10avg</span><span class="op">$</span><span class="va">avg_color</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html" class="external-link">factor</a></span><span class="op">(</span><span class="va">top10avg</span><span class="op">$</span><span class="va">avg_color</span>, levels <span class="op">=</span> <span class="va">top10avg</span><span class="op">$</span><span class="va">avg_color</span><span class="op">)</span></span>
+<span><span class="va">top10avg</span><span class="op">$</span><span class="va">avg_color</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span><span class="op">(</span><span class="va">top10avg</span><span class="op">$</span><span class="va">avg_color</span>, levels <span class="op">=</span> <span class="va">top10avg</span><span class="op">$</span><span class="va">avg_color</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># plot</span></span>
-<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="va">top10avg</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">avg_color</span>, y <span class="op">=</span> <span class="va">freq</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html" class="external-link">geom_bar</a></span><span class="op">(</span>stat <span class="op">=</span> <span class="st">'identity'</span>, fill <span class="op">=</span> <span class="va">top10avg</span><span class="op">$</span><span class="va">avg_color</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html" class="external-link">theme_bw</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html" class="external-link">theme</a></span><span class="op">(</span>axis.text.x <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html" class="external-link">element_text</a></span><span class="op">(</span>angle <span class="op">=</span> <span class="fl">45</span>, hjust <span class="op">=</span> <span class="fl">1</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">xlab</a></span><span class="op">(</span><span class="st">'Average colour'</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">ylab</a></span><span class="op">(</span><span class="st">'Frequency'</span><span class="op">)</span></span></code></pre></div>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">top10avg</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">avg_color</span>, y <span class="op">=</span> <span class="va">freq</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar</a></span><span class="op">(</span>stat <span class="op">=</span> <span class="st">'identity'</span>, fill <span class="op">=</span> <span class="va">top10avg</span><span class="op">$</span><span class="va">avg_color</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span><span class="op">(</span>axis.text.x <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_text</a></span><span class="op">(</span>angle <span class="op">=</span> <span class="fl">45</span>, hjust <span class="op">=</span> <span class="fl">1</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">xlab</a></span><span class="op">(</span><span class="st">'Average colour'</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ylab</a></span><span class="op">(</span><span class="st">'Frequency'</span><span class="op">)</span></span></code></pre></div>
 <img src="colouR_files/figure-html/top10colsPlotAvg-1.png" width="70%" height="70%" style="display: block; margin: auto;"><center>
 <caption>
 <span id="fig4:fig4">Figure 4: </span>Frequency of averaged colours used
 in the image with white and black colours excluded.
 </caption>
 </center>
-<p>in Figure 4, we can see that several black shade have slipped through
-the <code>exclude</code> filter. However, we can provide additional hex
-codes by passing them to the <code>excludeCols</code> argument.</p>
-<p><em>(This section still to come!)</em></p>
 </div>
-<div class="section level2">
-<h2 id="grouping-colours">Grouping colours<a class="anchor" aria-label="anchor" href="#grouping-colours"></a>
-</h2>
+</div>
+<div id="excude-custom-colours" class="section level1">
+<h1 class="hasAnchor">
+<a href="#excude-custom-colours" class="anchor"></a>Excude custom colours</h1>
+<p>In Figure 4, we can see that several black shade have slipped through
+the <code>exclude</code> filter. However, we can provide additional hex
+codes by passing them to the <code>excludeCols</code> argument. To
+illustrate this point, we will use the previously created dataframe of
+top 10 colours, with the inbuilt black and white shades removed.
+Examining the colours we have:</p>
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">top10exclude</span></span>
+<span><span class="co">#&gt;        hex   freq col_percent</span></span>
+<span><span class="co">#&gt; 2  #A9C5DA 487309     13.2896</span></span>
+<span><span class="co">#&gt; 3  #7CA5C1 160750      4.3839</span></span>
+<span><span class="co">#&gt; 4  #C9E0F0  60288      1.6441</span></span>
+<span><span class="co">#&gt; 5  #5A8595  36473      0.9947</span></span>
+<span><span class="co">#&gt; 6  #FFFAC2  36049      0.9831</span></span>
+<span><span class="co">#&gt; 7  #231F20  11566      0.3154</span></span>
+<span><span class="co">#&gt; 8  #A9C5DB   8923      0.2433</span></span>
+<span><span class="co">#&gt; 9  #AAC5DA   7807      0.2129</span></span>
+<span><span class="co">#&gt; 10 #7BA4C0   6042      0.1648</span></span>
+<span><span class="co">#&gt; 11 #A7C6DA   5520      0.1505</span></span></code></pre></div>
+<p>However, if we want to exclude any of these colours, we can pass them
+as a character vector of hex values to the <code>customExclude</code>
+argument, as follows:</p>
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">coloursToExclude</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"#A9C5DA"</span>, <span class="st">"#7CA5C1"</span>, <span class="st">"#C9E0F0"</span>, <span class="st">"#5A8595"</span>, <span class="st">"#FFFAC2"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">top10exclude</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/getTopCol.html">getTopCol</a></span><span class="op">(</span>path <span class="op">=</span> <span class="st">"https://raw.githubusercontent.com/AlanInglis/colouR/master/images/bender.png"</span>,</span>
+<span>                          n <span class="op">=</span> <span class="fl">10</span>,</span>
+<span>                          avgCols <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>                          exclude <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>                          customExclude <span class="op">=</span> <span class="va">coloursToExclude</span><span class="op">)</span></span></code></pre></div>
+<p>Now when we look at the <code>top10exclude</code> object, it should
+not contain any of the colours selected.</p>
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">top10exclude</span></span>
+<span><span class="co">#&gt;        hex  freq col_percent</span></span>
+<span><span class="co">#&gt; 7  #231F20 11566      0.3154</span></span>
+<span><span class="co">#&gt; 8  #A9C5DB  8923      0.2433</span></span>
+<span><span class="co">#&gt; 9  #AAC5DA  7807      0.2129</span></span>
+<span><span class="co">#&gt; 10 #7BA4C0  6042      0.1648</span></span>
+<span><span class="co">#&gt; 11 #A7C6DA  5520      0.1505</span></span>
+<span><span class="co">#&gt; 12 #A7C6DB  5496      0.1499</span></span>
+<span><span class="co">#&gt; 13 #7AA6C1  4933      0.1345</span></span>
+<span><span class="co">#&gt; 14 #AAC5D8  4731      0.1290</span></span>
+<span><span class="co">#&gt; 15 #7AA6C3  4524      0.1234</span></span>
+<span><span class="co">#&gt; 16 #A8C4D9  4467      0.1218</span></span></code></pre></div>
+</div>
+<div id="grouping-colours" class="section level1">
+<h1 class="hasAnchor">
+<a href="#grouping-colours" class="anchor"></a>Grouping colours</h1>
 <p>As we have already seen, in <code>colouR</code> we provide an option
 to group and average colours in the <code>getTopCol</code> function. The
 function used to group the colours is the <code>groupCols</code>
@@ -326,8 +405,8 @@ take a vector of colours like the one below, we can see that there are
 some unique colours and some colours that are similar. To begin, lets
 take a look at the colour palette, we can do this by using the
 <code>plotPalette</code> function:</p>
-<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">hex_colors</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"#FF0000"</span>, <span class="st">"#00FF00"</span>, <span class="st">"#0000FF"</span>, <span class="st">"#FFFF00"</span>, <span class="st">"#FF00FF"</span>, <span class="st">"#1050FF"</span>, <span class="st">"#ffff50"</span><span class="op">)</span></span>
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">hex_colors</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"#FF0000"</span>, <span class="st">"#00FF00"</span>, <span class="st">"#0000FF"</span>, <span class="st">"#FFFF00"</span>, <span class="st">"#FF00FF"</span>, <span class="st">"#1050FF"</span>, <span class="st">"#ffff50"</span><span class="op">)</span></span>
 <span></span>
 <span><span class="fu"><a href="../reference/plotPalette.html">plotPalette</a></span><span class="op">(</span><span class="va">hex_colors</span><span class="op">)</span></span></code></pre></div>
 <img src="colouR_files/figure-html/palette-1.png" width="70%" height="70%" style="display: block; margin: auto;"><center>
@@ -339,31 +418,34 @@ take a look at the colour palette, we can do this by using the
 <code>n_clusters = 4</code>. The output is a data frame with two
 columns. One containing the hex value and another containing the group
 number.</p>
-<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">cols</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"#FF0000"</span>, <span class="st">"#00FF00"</span>, <span class="st">"#0000FF"</span>, <span class="st">"#FFFF00"</span>, <span class="st">"#FF00FF"</span>, <span class="st">"#1050FF"</span>, <span class="st">"#ffff50"</span><span class="op">)</span></span>
+<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">cols</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"#FF0000"</span>, <span class="st">"#00FF00"</span>, <span class="st">"#0000FF"</span>, <span class="st">"#FFFF00"</span>, <span class="st">"#FF00FF"</span>, <span class="st">"#1050FF"</span>, <span class="st">"#ffff50"</span><span class="op">)</span></span>
 <span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/Random.html" class="external-link">set.seed</a></span><span class="op">(</span><span class="fl">1701</span><span class="op">)</span> <span class="co"># for reproducability</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">1701</span><span class="op">)</span> <span class="co"># for reproducability</span></span>
 <span><span class="va">grCol</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/groupCols.html">groupCols</a></span><span class="op">(</span>hex_colors <span class="op">=</span> <span class="va">cols</span>, n_clusters <span class="op">=</span> <span class="fl">4</span><span class="op">)</span></span></code></pre></div>
+<div id="plot-groups" class="section level2">
+<h2 class="hasAnchor">
+<a href="#plot-groups" class="anchor"></a>Plot Groups</h2>
 <p>Arranging the data frame by group and plotting gives us:</p>
-<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span></span>
 <span><span class="co"># order factors</span></span>
-<span><span class="va">grCol</span><span class="op">$</span><span class="va">hex_color</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html" class="external-link">factor</a></span><span class="op">(</span><span class="va">grCol</span><span class="op">$</span><span class="va">hex_color</span>, levels <span class="op">=</span> <span class="va">grCol</span><span class="op">$</span><span class="va">hex_color</span><span class="op">)</span></span>
+<span><span class="va">grCol</span><span class="op">$</span><span class="va">hex_color</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span><span class="op">(</span><span class="va">grCol</span><span class="op">$</span><span class="va">hex_color</span>, levels <span class="op">=</span> <span class="va">grCol</span><span class="op">$</span><span class="va">hex_color</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># plot</span></span>
-<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="va">grCol</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">hex_color</span>, y <span class="op">=</span> <span class="va">group</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html" class="external-link">geom_bar</a></span><span class="op">(</span>stat <span class="op">=</span> <span class="st">'identity'</span>, fill <span class="op">=</span> <span class="va">grCol</span><span class="op">$</span><span class="va">hex_color</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html" class="external-link">theme_bw</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html" class="external-link">theme</a></span><span class="op">(</span>axis.text.x <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html" class="external-link">element_text</a></span><span class="op">(</span>angle <span class="op">=</span> <span class="fl">45</span>, hjust <span class="op">=</span> <span class="fl">1</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">xlab</a></span><span class="op">(</span><span class="st">'Average colour'</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">ylab</a></span><span class="op">(</span><span class="st">'Group'</span><span class="op">)</span></span></code></pre></div>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">grCol</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">hex_color</span>, y <span class="op">=</span> <span class="va">group</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar</a></span><span class="op">(</span>stat <span class="op">=</span> <span class="st">'identity'</span>, fill <span class="op">=</span> <span class="va">grCol</span><span class="op">$</span><span class="va">hex_color</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span><span class="op">(</span>axis.text.x <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_text</a></span><span class="op">(</span>angle <span class="op">=</span> <span class="fl">45</span>, hjust <span class="op">=</span> <span class="fl">1</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">xlab</a></span><span class="op">(</span><span class="st">'Average colour'</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ylab</a></span><span class="op">(</span><span class="st">'Group'</span><span class="op">)</span></span></code></pre></div>
 <img src="colouR_files/figure-html/groupPlot-1.png" width="70%" height="70%" style="display: block; margin: auto;"><center>
 <caption>
 <span id="fig6:fig6">Figure 6: </span>Grouped colours.
 </caption>
 </center>
 <p>or using the <code>plotPalette</code> function:</p>
-<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/plotPalette.html">plotPalette</a></span><span class="op">(</span>df <span class="op">=</span> <span class="va">grCol</span>, color_col <span class="op">=</span> <span class="st">'hex_color'</span><span class="op">)</span></span></code></pre></div>
 <img src="colouR_files/figure-html/palette2-1.png" width="70%" height="70%" style="display: block; margin: auto;"><center>
 <caption>
@@ -374,16 +456,17 @@ number.</p>
 colours are grouped together, along with the two yellow colours. The red
 and violet colours are also in a group.</p>
 </div>
-<div class="section level2">
-<h2 id="average-colours">Average colours<a class="anchor" aria-label="anchor" href="#average-colours"></a>
-</h2>
+</div>
+<div id="average-colours" class="section level1">
+<h1 class="hasAnchor">
+<a href="#average-colours" class="anchor"></a>Average colours</h1>
 <p>The <code>avgHex</code> function takes a data frame with two columns:
 one for the hex color values and another for the group labels. It
 calculates the average color for each group and returns a data frame
 with the group labels and their corresponding average hex colors. Using
 the grouped colours from before we get:</p>
-<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Random.html" class="external-link">set.seed</a></span><span class="op">(</span><span class="fl">1701</span><span class="op">)</span></span>
+<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">1701</span><span class="op">)</span></span>
 <span><span class="va">avgCl</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/avgHex.html">avgHex</a></span><span class="op">(</span>df <span class="op">=</span> <span class="va">grCol</span>, group_col <span class="op">=</span> <span class="st">'group'</span>, hex_col <span class="op">=</span> <span class="st">'hex_color'</span><span class="op">)</span></span>
 <span><span class="va">avgCl</span></span>
 <span><span class="co">#&gt;   group avg_color freq</span></span>
@@ -400,17 +483,50 @@ the grouped colours from before we get:</p>
 <p>In Figure 8, we can see that the four groups have been averaged into
 single colours.</p>
 </div>
-<div class="section level2">
-<h2 id="colour-palettes">Colour palettes<a class="anchor" aria-label="anchor" href="#colour-palettes"></a>
-</h2>
+<div id="build-colour-palette-from-image" class="section level1">
+<h1 class="hasAnchor">
+<a href="#build-colour-palette-from-image" class="anchor"></a>Build Colour Palette from Image</h1>
+<p>The <code>img2pal</code> function automates some of the above
+processes and creates a custom palette, ready to use, directly from an
+input image. The function arguments mirror those from the
+<code>gettpCol</code> function. In the example below, we are creating a
+colour palette of the top 10 most frequent colours, while grouping into
+15 clusters and averaging the colours. Using the same image of Bender
+from above, we can do the following:</p>
+<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">pal</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/img2pal.html">img2pal</a></span><span class="op">(</span>path <span class="op">=</span> <span class="st">"https://raw.githubusercontent.com/AlanInglis/colouR/master/images/bender.png"</span>,</span>
+<span>               n <span class="op">=</span> <span class="fl">10</span>,</span>
+<span>               avgCols <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>               exclude <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>               n_clusters <span class="op">=</span> <span class="fl">15</span>,</span>
+<span>               customExclude <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span></span></code></pre></div>
+<img src="colouR_files/figure-html/img2palette-1.png" width="70%" height="70%" style="display: block; margin: auto;"><center>
+<caption>
+<span id="fig9:fig9">Figure 9: </span>Colour palette created directly
+from input image.
+</caption>
+</center>
+<p>And we can take a look at the hex codes for the colour palette by
+checking the newly created <code>pal</code>opbject:</p>
+<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">pal</span></span>
+<span><span class="co">#&gt;  [1] "#8898A0" "#64747F" "#D3DAD1" "#2A2F34" "#434E56" "#A0AFB8" "#667B86"</span></span>
+<span><span class="co">#&gt;  [8] "#4D5C64" "#71838D" "#636F78"</span></span></code></pre></div>
+</div>
+<div id="prebuilt-palettes" class="section level1">
+<h1 class="hasAnchor">
+<a href="#prebuilt-palettes" class="anchor"></a>Prebuilt Palettes</h1>
 <p>One useful feature of taking in an image and return the top <span class="math inline">\(n\)</span> colours is the ability to turn that
 image into a colour palette. For fun, we provide colour palettes based
 on all the studio albums of both Radiohead and Taylor Swift. The
 palettes can be accessed by indexing either
 <code>radiohead_palettes</code> or <code>taylor_palettes</code>, as
 shown in the code below. It should be noted, that when creating these
-custom palettes, the top 10 average colours were chosen. The full list
-of names for Radiohead are:</p>
+custom palettes, the top 10 average colours were chosen.</p>
+<div id="radiohead" class="section level2">
+<h2 class="hasAnchor">
+<a href="#radiohead" class="anchor"></a>Radiohead</h2>
+<p>The full list of names for Radiohead are:</p>
 <ul>
 <li>
 <code>pabloHoney</code>: Pablo Honey</li>
@@ -431,6 +547,10 @@ of names for Radiohead are:</p>
 <li>
 <code>amsp</code> : A Moon Shaped Pool</li>
 </ul>
+</div>
+<div id="taylor-swift" class="section level2">
+<h2 class="hasAnchor">
+<a href="#taylor-swift" class="anchor"></a>Taylor Swift</h2>
 <p>The full list of names for Taylor Swift are:</p>
 <ul>
 <li>
@@ -454,28 +574,32 @@ of names for Radiohead are:</p>
 <li>
 <code>midnights</code> : Midnights</li>
 </ul>
-<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">radiohead_palettes</span><span class="op">$</span><span class="va">pabloHoney</span></span>
 <span><span class="co">#&gt;  [1] "#D9BE9C" "#C8751E" "#2C2372" "#EAE1D5" "#E8B559" "#7E8B42" "#39251A"</span></span>
 <span><span class="co">#&gt;  [8] "#EAA41C" "#D7478C" "#A7381F"</span></span>
 <span><span class="va">taylor_palettes</span><span class="op">$</span><span class="va">red</span></span>
 <span><span class="co">#&gt;  [1] "#694B4B" "#C0B6A4" "#4E3843" "#7F675A" "#AB5862" "#95806D" "#9B2E47"</span></span>
 <span><span class="co">#&gt;  [8] "#A99783" "#EDE6DA" "#30263A"</span></span></code></pre></div>
+</div>
+<div id="palette-plots" class="section level2">
+<h2 class="hasAnchor">
+<a href="#palette-plots" class="anchor"></a>Palette Plots</h2>
 <p>To view any of the palettes, we can use the <code>plotPalette</code>
 function:</p>
-<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb20"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/plotPalette.html">plotPalette</a></span><span class="op">(</span><span class="va">radiohead_palettes</span><span class="op">$</span><span class="va">okComputer</span><span class="op">)</span></span></code></pre></div>
 <img src="colouR_files/figure-html/rhpal-1.png" width="70%" height="70%" style="display: block; margin: auto;"><center>
 <caption>
-<span id="fig9:fig9">Figure 9: </span>Radiohead OK Computer colour
+<span id="fig10:fig10">Figure 10: </span>Radiohead OK Computer colour
 palette.
 </caption>
 </center>
-<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/plotPalette.html">plotPalette</a></span><span class="op">(</span><span class="va">taylor_palettes</span><span class="op">$</span><span class="va">red</span><span class="op">)</span></span></code></pre></div>
 <img src="colouR_files/figure-html/typal-1.png" width="70%" height="70%" style="display: block; margin: auto;"><center>
 <caption>
-<span id="fig10:fig10">Figure 10: </span>Taylor Swift Red colour
+<span id="fig11:fig11">Figure 11: </span>Taylor Swift Red colour
 palette.
 </caption>
 </center>
@@ -485,27 +609,28 @@ palette based on the specified <code>palette</code> name. The color
 palettes are sourced from two predefined lists:
 <code>taylor_palettes</code> and <code>radiohead_palettes</code>. For
 example</p>
-<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb22"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Create a color palette based on a Taylor Swift album cover</span></span>
 <span><span class="va">tswift_palette</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/colPalette.html">colPalette</a></span><span class="op">(</span>palette <span class="op">=</span> <span class="st">"evermore"</span><span class="op">)</span></span>
 <span><span class="va">tpal</span> <span class="op">&lt;-</span> <span class="fu">tswift_palette</span><span class="op">(</span><span class="fl">20</span><span class="op">)</span></span>
 <span><span class="fu"><a href="../reference/plotPalette.html">plotPalette</a></span><span class="op">(</span><span class="va">tpal</span><span class="op">)</span></span></code></pre></div>
 <img src="colouR_files/figure-html/typal20-1.png" width="70%" height="70%" style="display: block; margin: auto;"><center>
 <caption>
-<span id="fig11:fig11">Figure 11: </span>Taylor Swift Repuatation colour
+<span id="fig12:fig12">Figure 12: </span>Taylor Swift Repuatation colour
 palette.
 </caption>
 </center>
 </div>
-<div class="section level2">
-<h2 id="use-in-ggplot">Use in ggplot<a class="anchor" aria-label="anchor" href="#use-in-ggplot"></a>
-</h2>
+</div>
+<div id="use-in-ggplot" class="section level1">
+<h1 class="hasAnchor">
+<a href="#use-in-ggplot" class="anchor"></a>Use in ggplot</h1>
 <p>For convenience, we also provide functionality to use these palettes
 as either a scale fill or scale colour (similar to the
 <code>ggplot2</code> <code>scale_color</code> and
 <code>scale_fill</code> functions).</p>
-<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org" class="external-link">dplyr</a></span><span class="op">)</span></span>
+<div class="sourceCode" id="cb23"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org">dplyr</a></span><span class="op">)</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; Attaching package: 'dplyr'</span></span>
 <span><span class="co">#&gt; The following objects are masked from 'package:stats':</span></span>
@@ -517,110 +642,110 @@ as either a scale fill or scale colour (similar to the
 <span><span class="co"># Apply a Radiohead color scale to a ggplot2 plot</span></span>
 <span></span>
 <span><span class="co"># Create a summary data frame with counts per manufacturer for the mpg data</span></span>
-<span><span class="va">manufacturer_counts</span> <span class="op">&lt;-</span> <span class="va">mpg</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html" class="external-link">group_by</a></span><span class="op">(</span><span class="va">manufacturer</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html" class="external-link">summarize</a></span><span class="op">(</span>count <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/context.html" class="external-link">n</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="va">manufacturer_counts</span> <span class="op">&lt;-</span> <span class="va">mpg</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">manufacturer</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarize</a></span><span class="op">(</span>count <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/context.html">n</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># sort the data</span></span>
-<span><span class="va">mpgsort</span> <span class="op">&lt;-</span> <span class="va">manufacturer_counts</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/order.html" class="external-link">order</a></span><span class="op">(</span><span class="va">manufacturer_counts</span><span class="op">$</span><span class="va">count</span>, decreasing <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>, <span class="op">]</span></span>
+<span><span class="va">mpgsort</span> <span class="op">&lt;-</span> <span class="va">manufacturer_counts</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/order.html">order</a></span><span class="op">(</span><span class="va">manufacturer_counts</span><span class="op">$</span><span class="va">count</span>, decreasing <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>, <span class="op">]</span></span>
 <span></span>
 <span><span class="co"># order factors</span></span>
-<span><span class="va">mpgsort</span><span class="op">$</span><span class="va">manufacturer</span> <span class="op">&lt;-</span>  <span class="fu"><a href="https://rdrr.io/r/base/factor.html" class="external-link">factor</a></span><span class="op">(</span><span class="va">mpgsort</span><span class="op">$</span><span class="va">manufacturer</span>, levels <span class="op">=</span> <span class="va">mpgsort</span><span class="op">$</span><span class="va">manufacturer</span><span class="op">)</span></span>
+<span><span class="va">mpgsort</span><span class="op">$</span><span class="va">manufacturer</span> <span class="op">&lt;-</span>  <span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span><span class="op">(</span><span class="va">mpgsort</span><span class="op">$</span><span class="va">manufacturer</span>, levels <span class="op">=</span> <span class="va">mpgsort</span><span class="op">$</span><span class="va">manufacturer</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Create the plot using a Radiohead palette</span></span>
-<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="va">mpgsort</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">manufacturer</span>, y<span class="op">=</span> <span class="va">count</span>, fill <span class="op">=</span> <span class="va">manufacturer</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html" class="external-link">geom_bar</a></span><span class="op">(</span>stat <span class="op">=</span> <span class="st">'identity'</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html" class="external-link">theme_minimal</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html" class="external-link">theme</a></span><span class="op">(</span>axis.text.x <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html" class="external-link">element_text</a></span><span class="op">(</span>angle <span class="op">=</span> <span class="fl">45</span>, hjust <span class="op">=</span> <span class="fl">1</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">mpgsort</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">manufacturer</span>, y<span class="op">=</span> <span class="va">count</span>, fill <span class="op">=</span> <span class="va">manufacturer</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar</a></span><span class="op">(</span>stat <span class="op">=</span> <span class="st">'identity'</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_minimal</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span><span class="op">(</span>axis.text.x <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_text</a></span><span class="op">(</span>angle <span class="op">=</span> <span class="fl">45</span>, hjust <span class="op">=</span> <span class="fl">1</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="../reference/scaleFill.html">scaleFill</a></span><span class="op">(</span>palette <span class="op">=</span> <span class="st">"pabloHoney"</span>, guide <span class="op">=</span> <span class="st">"none"</span><span class="op">)</span></span></code></pre></div>
 <img src="colouR_files/figure-html/rhpalgg-1.png" width="70%" height="70%" style="display: block; margin: auto;"><center>
 <caption>
-<span id="fig12:fig12">Figure 12: </span>Displaying data using a
+<span id="fig13:fig13">Figure 13: </span>Displaying data using a
 Radiohead colour palette and <code>scaleFill</code>.
 </caption>
 </center>
 <p>To do the same using a Taylor Swift palette:</p>
-<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb24"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span></span>
 <span><span class="co"># Create the plot using a Taylor Swift palette</span></span>
-<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="va">mpgsort</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">manufacturer</span>, y<span class="op">=</span> <span class="va">count</span>, fill <span class="op">=</span> <span class="va">manufacturer</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html" class="external-link">geom_bar</a></span><span class="op">(</span>stat <span class="op">=</span> <span class="st">'identity'</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html" class="external-link">theme_minimal</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html" class="external-link">theme</a></span><span class="op">(</span>axis.text.x <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html" class="external-link">element_text</a></span><span class="op">(</span>angle <span class="op">=</span> <span class="fl">45</span>, hjust <span class="op">=</span> <span class="fl">1</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">mpgsort</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">manufacturer</span>, y<span class="op">=</span> <span class="va">count</span>, fill <span class="op">=</span> <span class="va">manufacturer</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar</a></span><span class="op">(</span>stat <span class="op">=</span> <span class="st">'identity'</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_minimal</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span><span class="op">(</span>axis.text.x <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_text</a></span><span class="op">(</span>angle <span class="op">=</span> <span class="fl">45</span>, hjust <span class="op">=</span> <span class="fl">1</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="../reference/scaleFill.html">scaleFill</a></span><span class="op">(</span>palette <span class="op">=</span> <span class="st">"evermore"</span>, guide <span class="op">=</span> <span class="st">"none"</span><span class="op">)</span></span></code></pre></div>
 <img src="colouR_files/figure-html/typalgg-1.png" width="70%" height="70%" style="display: block; margin: auto;"><center>
 <caption>
-<span id="fig13:fig13">Figure 13: </span>Displaying data using a Taylor
+<span id="fig14:fig14">Figure 14: </span>Displaying data using a Taylor
 Swift colour palette and <code>scaleFill</code>.
 </caption>
 </center>
 <p>Similarly, to use <code>scaleColor</code>:</p>
-<div class="sourceCode" id="cb20"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb25"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span></span>
 <span><span class="co"># Create the plot using a Radiohead palette</span></span>
-<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="va">mpg</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">122</span>,<span class="op">]</span>,  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">displ</span>, y <span class="op">=</span> <span class="va">cty</span>, color <span class="op">=</span> <span class="va">manufacturer</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html" class="external-link">geom_point</a></span><span class="op">(</span>size <span class="op">=</span> <span class="fl">2</span><span class="op">)</span> <span class="op">+</span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">mpg</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">122</span>,<span class="op">]</span>,  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">displ</span>, y <span class="op">=</span> <span class="va">cty</span>, color <span class="op">=</span> <span class="va">manufacturer</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span>size <span class="op">=</span> <span class="fl">2</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="../reference/scaleColor.html">scaleColor</a></span><span class="op">(</span>palette <span class="op">=</span> <span class="st">'tkol'</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html" class="external-link">theme_minimal</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_minimal</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <img src="colouR_files/figure-html/rhpalgg2-1.png" width="100%" height="70%" style="display: block; margin: auto;"><center>
 <caption>
-<span id="fig14:fig14">Figure 14: </span>Displaying data using a
+<span id="fig15:fig15">Figure 15: </span>Displaying data using a
 Radiohead colour palette and <code>scaleColor</code>.
 </caption>
 </center>
 <p>And using a Taylor Swift palette:</p>
-<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb26"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span></span>
 <span><span class="co"># Create the plot using a Taylor Swift palette</span></span>
-<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="va">mpg</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">122</span>,<span class="op">]</span>,  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">displ</span>, y <span class="op">=</span> <span class="va">cty</span>, color <span class="op">=</span> <span class="va">manufacturer</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html" class="external-link">geom_point</a></span><span class="op">(</span>size <span class="op">=</span> <span class="fl">2</span><span class="op">)</span> <span class="op">+</span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">mpg</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">122</span>,<span class="op">]</span>,  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">displ</span>, y <span class="op">=</span> <span class="va">cty</span>, color <span class="op">=</span> <span class="va">manufacturer</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span>size <span class="op">=</span> <span class="fl">2</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="../reference/scaleColor.html">scaleColor</a></span><span class="op">(</span>palette <span class="op">=</span> <span class="st">'tSwift'</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html" class="external-link">theme_minimal</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_minimal</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <img src="colouR_files/figure-html/typalgg2-1.png" width="100%" height="70%" style="display: block; margin: auto;"><center>
 <caption>
-<span id="fig15:fig15">Figure 15: </span>Displaying data using a Taylor
+<span id="fig16:fig16">Figure 16: </span>Displaying data using a Taylor
 Swift colour palette and <code>scaleColor</code>.
 </caption>
 </center>
 <p>Of course, we can use these palettes in a more <em>traditional</em>
 way by passing the palette to ggplot. For example:</p>
-<div class="sourceCode" id="cb22"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb27"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Dummy data</span></span>
 <span><span class="va">x</span> <span class="op">&lt;-</span> <span class="va">LETTERS</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">20</span><span class="op">]</span></span>
-<span><span class="va">y</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="st">"var"</span>, <span class="fu"><a href="https://rdrr.io/r/base/seq.html" class="external-link">seq</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">20</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="va">data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/expand.grid.html" class="external-link">expand.grid</a></span><span class="op">(</span>X<span class="op">=</span><span class="va">x</span>, Y<span class="op">=</span><span class="va">y</span><span class="op">)</span></span>
-<span><span class="va">data</span><span class="op">$</span><span class="va">Z</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/Uniform.html" class="external-link">runif</a></span><span class="op">(</span><span class="fl">400</span>, <span class="fl">0</span>, <span class="fl">5</span><span class="op">)</span></span>
+<span><span class="va">y</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span><span class="op">(</span><span class="st">"var"</span>, <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">20</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="va">data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/expand.grid.html">expand.grid</a></span><span class="op">(</span>X<span class="op">=</span><span class="va">x</span>, Y<span class="op">=</span><span class="va">y</span><span class="op">)</span></span>
+<span><span class="va">data</span><span class="op">$</span><span class="va">Z</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/Uniform.html">runif</a></span><span class="op">(</span><span class="fl">400</span>, <span class="fl">0</span>, <span class="fl">5</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Set a Taylor Swift palette of two colours</span></span>
-<span><span class="va">pal</span> <span class="op">&lt;-</span> <span class="va">taylor_palettes</span><span class="op">$</span><span class="va">tSwift</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">6</span>,<span class="fl">5</span><span class="op">)</span><span class="op">]</span></span>
+<span><span class="va">pal</span> <span class="op">&lt;-</span> <span class="va">taylor_palettes</span><span class="op">$</span><span class="va">tSwift</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">6</span>,<span class="fl">5</span><span class="op">)</span><span class="op">]</span></span>
 <span></span>
 <span><span class="co"># Create a heatmap </span></span>
-<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="va">data</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">X</span>, y <span class="op">=</span> <span class="va">Y</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_tile.html" class="external-link">geom_tile</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>fill <span class="op">=</span> <span class="va">Z</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_gradient.html" class="external-link">scale_fill_gradientn</a></span><span class="op">(</span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">data</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">X</span>, y <span class="op">=</span> <span class="va">Y</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_tile.html">geom_tile</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>fill <span class="op">=</span> <span class="va">Z</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_gradient.html">scale_fill_gradientn</a></span><span class="op">(</span></span>
 <span>    colors <span class="op">=</span> <span class="va">pal</span>,  name <span class="op">=</span> <span class="st">"Z value"</span>,</span>
-<span>    guide <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/guide_colourbar.html" class="external-link">guide_colorbar</a></span><span class="op">(</span></span>
+<span>    guide <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/guide_colourbar.html">guide_colorbar</a></span><span class="op">(</span></span>
 <span>      order <span class="op">=</span> <span class="fl">1</span>,</span>
 <span>      frame.colour <span class="op">=</span> <span class="st">"black"</span>,</span>
 <span>      ticks.colour <span class="op">=</span> <span class="st">"black"</span></span>
-<span>    <span class="op">)</span>, oob <span class="op">=</span> <span class="fu">scales</span><span class="fu">::</span><span class="va"><a href="https://scales.r-lib.org/reference/oob.html" class="external-link">squish</a></span></span>
+<span>    <span class="op">)</span>, oob <span class="op">=</span> <span class="fu">scales</span><span class="fu">::</span><span class="va"><a href="https://scales.r-lib.org/reference/oob.html">squish</a></span></span>
 <span>  <span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">xlab</a></span><span class="op">(</span><span class="st">''</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">ylab</a></span><span class="op">(</span><span class="st">''</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html" class="external-link">theme_bw</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">xlab</a></span><span class="op">(</span><span class="st">''</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ylab</a></span><span class="op">(</span><span class="st">''</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <img src="colouR_files/figure-html/tyhm-1.png" width="100%" height="70%" style="display: block; margin: auto;"><center>
 <caption>
-<span id="fig16:fig16">Figure 16: </span>Heatmap displaying data using a
+<span id="fig17:fig17">Figure 17: </span>Heatmap displaying data using a
 Taylor Swift colour palette.
 </caption>
 </center>
 </div>
-<div class="section level2">
-<h2 id="utility-functions">Utility Functions<a class="anchor" aria-label="anchor" href="#utility-functions"></a>
-</h2>
+<div id="utility-functions" class="section level1">
+<h1 class="hasAnchor">
+<a href="#utility-functions" class="anchor"></a>Utility Functions</h1>
 <p>In this section we take a brief look at some of the utility functions
 used in <code>colouR</code>. Thes include a useful little function that
 returns the file extension of a given file. For example:</p>
-<div class="sourceCode" id="cb23"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb28"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">fileName</span> <span class="op">&lt;-</span> <span class="st">"https://raw.githubusercontent.com/AlanInglis/colouR/master/images/bender.png"</span></span>
 <span><span class="fu"><a href="../reference/getExtension.html">getExtension</a></span><span class="op">(</span>file <span class="op">=</span> <span class="va">fileName</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] "png"</span></span>
@@ -638,16 +763,16 @@ class “array”. If the image is a PNG, the object will be of class
 “matrix”.</p>
 <p>Using the image of Bender from before we can get the image data. The
 resulting object can then be used, for example:</p>
-<div class="sourceCode" id="cb24"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb29"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">urlName</span> <span class="op">&lt;-</span> <span class="st">"https://raw.githubusercontent.com/AlanInglis/colouR/master/images/bender.png"</span></span>
 <span><span class="va">image</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/read_image_from_url.html">read_image_from_url</a></span><span class="op">(</span>path <span class="op">=</span> <span class="va">urlName</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># set up a plot </span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">100</span>, <span class="fl">250</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">300</span>, <span class="fl">550</span><span class="op">)</span>, type <span class="op">=</span> <span class="st">"n"</span>, xlab <span class="op">=</span> <span class="st">""</span>, ylab <span class="op">=</span> <span class="st">""</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/graphics/rasterImage.html" class="external-link">rasterImage</a></span><span class="op">(</span><span class="va">image</span>,<span class="fl">100</span>,<span class="fl">300</span>,<span class="fl">150</span>,<span class="fl">550</span><span class="op">)</span></span></code></pre></div>
+<span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">100</span>, <span class="fl">250</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">300</span>, <span class="fl">550</span><span class="op">)</span>, type <span class="op">=</span> <span class="st">"n"</span>, xlab <span class="op">=</span> <span class="st">""</span>, ylab <span class="op">=</span> <span class="st">""</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/graphics/rasterImage.html">rasterImage</a></span><span class="op">(</span><span class="va">image</span>,<span class="fl">100</span>,<span class="fl">300</span>,<span class="fl">150</span>,<span class="fl">550</span><span class="op">)</span></span></code></pre></div>
 <img src="colouR_files/figure-html/url-1.png" width="100%" height="100%" style="display: block; margin: auto;"><center>
 <caption>
-<span id="fig17:fig17">Figure 17: </span>Reading in an image from a url.
+<span id="fig18:fig18">Figure 18: </span>Reading in an image from a url.
 </caption>
 </center>
 </div>
@@ -664,13 +789,11 @@ resulting object can then be used, for example:</p>
 
 
       <footer><div class="copyright">
-  <p></p>
-<p>Developed by .</p>
+  <p>Developed by Alan Inglis.</p>
 </div>
 
 <div class="pkgdown">
-  <p></p>
-<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>
@@ -678,8 +801,6 @@ resulting object can then be used, for example:</p>
 
   
 
-
-  
 
   </body>
 </html>

@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Function reference • colouR</title>
+<title>Create a Colour Palette from an Image — img2pal • colouR</title>
 
 
 <!-- jquery -->
@@ -39,7 +39,8 @@
 
 
 
-<meta property="og:title" content="Function reference" />
+<meta property="og:title" content="Create a Colour Palette from an Image — img2pal" />
+<meta property="og:description" content="This function generates a colour palette based on the most prominent colors in an image.." />
 
 
 
@@ -58,7 +59,7 @@
   </head>
 
   <body data-spy="scroll" data-target="#toc">
-    <div class="container template-reference-index">
+    <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -103,114 +104,62 @@
       </header>
 
 <div class="row">
-  <div class="contents col-md-9">
+  <div class="col-md-9 contents">
     <div class="page-header">
-      <h1>Reference</h1>
+    <h1>Create a Colour Palette from an Image</h1>
+    
+    <div class="hidden name"><code>img2pal.Rd</code></div>
     </div>
 
-    <table class="ref-index">
+    <div class="ref-description">
+    <p>This function generates a colour palette based on the most prominent colors in an image..</p>
+    </div>
 
-    <colgroup>
-      
-      <col class="alias" />
-      <col class="title" />
-    </colgroup>
+    <pre class="usage"><span><span class='fu'>img2pal</span><span class='op'>(</span><span class='va'>path</span>, <span class='va'>n</span>, <span class='va'>avgCols</span>, <span class='va'>exclude</span>, <span class='va'>n_clusters</span>, customExclude <span class='op'>=</span> <span class='cn'>NULL</span><span class='op'>)</span></span></pre>
 
-    <tbody>
-      <tr>
-        <th colspan="2">
-          <h2 id="section-all-functions" class="hasAnchor"><a href="#section-all-functions" class="anchor"></a>All functions</h2>
-          <p class="section-desc"></p>
-        </th>
-      </tr>
-      
-      
-    </tbody><tbody>
-      
-      
-      <tr>
-        
-        <td>
-          <p><code><a href="avgHex.html">avgHex()</a></code> </p>
-        </td>
-        <td><p>avgHex</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="colPalette.html">colPalette()</a></code> </p>
-        </td>
-        <td><p>colPalette</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="excludeCols.html">excludeCols()</a></code> </p>
-        </td>
-        <td><p>excludeCols</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="getExtension.html">getExtension()</a></code> </p>
-        </td>
-        <td><p>getExtension</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="getTopCol.html">getTopCol()</a></code> </p>
-        </td>
-        <td><p>getTopCol</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="groupCols.html">groupCols()</a></code> </p>
-        </td>
-        <td><p>groupCols</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="img2pal.html">img2pal()</a></code> </p>
-        </td>
-        <td><p>Create a Colour Palette from an Image</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="plotPalette.html">plotPalette()</a></code> </p>
-        </td>
-        <td><p>plotPalette</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="radiohead_palettes.html">radiohead_palettes</a></code> </p>
-        </td>
-        <td><p>list of radiohead colour palettes</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="read_image_from_url.html">read_image_from_url()</a></code> </p>
-        </td>
-        <td><p>read_image_from_url</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="scaleColor.html">scaleColor()</a></code> </p>
-        </td>
-        <td><p>scaleColor</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="scaleFill.html">scaleFill()</a></code> </p>
-        </td>
-        <td><p>scaleFill</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="taylor_palettes.html">taylor_palettes</a></code> </p>
-        </td>
-        <td><p>list of Taylor swift colour palettes</p></td>
-      </tr>
-    </tbody>
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>path</th>
+      <td><p>Character string. The path to the image file.</p></td>
+    </tr>
+    <tr>
+      <th>avgCols</th>
+      <td><p>Logical. Whether to average colours within clusters.</p></td>
+    </tr>
+    <tr>
+      <th>exclude</th>
+      <td><p>Character vector. List of colors in HEX format to exclude from the palette.</p></td>
+    </tr>
+    <tr>
+      <th>noCols</th>
+      <td><p>Integer. The number of most frequent colours in input image to consider.</p></td>
+    </tr>
+    <tr>
+      <th>nClust</th>
+      <td><p>Integer. The number of clusters for colour grouping.</p></td>
+    </tr>
     </table>
-  </div>
 
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>A colour palette generated from input image.</p>
+
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><span class='r-in'><span><span class='va'>pal</span> <span class='op'>&lt;-</span> <span class='fu'>img2pal</span><span class='op'>(</span>path <span class='op'>=</span> <span class='st'>"https://raw.githubusercontent.com/AlanInglis/colouR/master/images/bender.png"</span>,</span></span>
+<span class='r-in'><span>               n <span class='op'>=</span> <span class='fl'>10</span>,</span></span>
+<span class='r-in'><span>               avgCols <span class='op'>=</span> <span class='cn'>TRUE</span>,</span></span>
+<span class='r-in'><span>               exclude <span class='op'>=</span> <span class='cn'>TRUE</span>,</span></span>
+<span class='r-in'><span>               n_clusters <span class='op'>=</span> <span class='fl'>15</span>,</span></span>
+<span class='r-in'><span>               customExclude <span class='op'>=</span> <span class='cn'>NULL</span><span class='op'>)</span></span></span>
+<span class='r-plt img'><img src='img2pal-1.png' alt='' width='700' height='433' /></span>
+<span class='r-in'><span><span class='va'>pal</span></span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  [1] "#768C99" "#4E5455" "#667681" "#67767F" "#5A6268" "#3E484E" "#D9DFD2"</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  [8] "#5B6E78" "#95A6B0" "#6E8492"</span>
+<span class='r-in'><span></span></span>
+</pre>
+  </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
       <h2 data-toc-skip>Contents</h2>
