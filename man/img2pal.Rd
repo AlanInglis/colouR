@@ -4,18 +4,27 @@
 \alias{img2pal}
 \title{Create a Colour Palette from an Image}
 \usage{
-img2pal(path, n, avgCols, exclude, n_clusters, customExclude = NULL)
+img2pal(
+  path,
+  n = NULL,
+  avgCols = FALSE,
+  exclude = FALSE,
+  n_clusters = NULL,
+  customExclude = NULL
+)
 }
 \arguments{
 \item{path}{Character string. The path to the image file.}
 
+\item{n}{Integer. The number of most frequent colours in input image to consider.}
+
 \item{avgCols}{Logical. Whether to average colours within clusters.}
 
-\item{exclude}{Character vector. List of colors in HEX format to exclude from the palette.}
+\item{exclude}{Character vector. List of colours in HEX format to exclude from the palette.}
 
-\item{noCols}{Integer. The number of most frequent colours in input image to consider.}
+\item{n_clusters}{Integer. The number of clusters for colour grouping.}
 
-\item{nClust}{Integer. The number of clusters for colour grouping.}
+\item{customExclude}{Character vector. Optional vector of custom color codes in HEX format to be excluded.}
 }
 \value{
 A colour palette generated from input image.
@@ -24,12 +33,12 @@ A colour palette generated from input image.
 This function generates a colour palette based on the most prominent colors in an image..
 }
 \examples{
-pal <- img2pal(path = "https://raw.githubusercontent.com/AlanInglis/colouR/master/images/bender.png",
-               n = 10,
-               avgCols = TRUE,
-               exclude = TRUE,
-               n_clusters = 15,
-               customExclude = NULL)
+pal<-img2pal(path = "https://raw.githubusercontent.com/AlanInglis/colouR/master/images/bender.png",
+             n = 10,
+             avgCols = TRUE,
+             exclude = TRUE,
+             n_clusters = 15,
+             customExclude = NULL)
 pal
 
 }
