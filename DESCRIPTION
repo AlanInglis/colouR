@@ -23,3 +23,5 @@ Suggests:
     rmarkdown,
     scales
 VignetteBuilder: knitr
+URL: https://alaninglis.github.io/colouR/, https://github.com/AlanInglis/colouR
+BugReports: https://github.com/AlanInglis/colouR/issues
